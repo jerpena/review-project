@@ -13,7 +13,7 @@ const characterArray = (() => {
 
     return charArray
 })(); // immediately invoke function and store result
-
+// Expect array of letters, numbers, and symbols
 
 // create a global variable called "pwLength" with a number between 10 and 18
 
