@@ -1,61 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    box-sizing: border-box;
-     }
-   
-   body {
-     background-color: #64A6BD;
-     justify-content: center;
-     align-items: center;
-     display: flex;
-     min-height: 100vh;
-       }
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: rgb(62, 144, 173);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+}
 .box {
-    background-color: #efefef;
-    padding-left: 60px;
-    padding: 60px;
+  position: relative;
+  display: grid;
+  row-gap: 30px;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50px 0.5fr 1fr;
+  grid-template-areas:
+    'none header'
+    'none input'
+    'none button';
+  padding: 60px 0;
+  width: 675px;
+  background: rgb(48, 38, 71);
+  background: linear-gradient(
+    43deg,
+    rgb(136, 62, 80) 0%,
+    rgba(208, 89, 88, 1) 100%
+  );
+  border-radius: 30px;
+  box-shadow: 3px 6px 3em #0c0c0c;
 }
-
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: rgb(48, 38, 71);
+  background: linear-gradient(
+    35deg,
+    rgba(48, 38, 71, 1) 0%,
+    rgba(101, 46, 67, 1) 100%
+  );
+}
+.box::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgb(226, 87, 87);
+  background: linear-gradient(
+    35deg,
+    rgba(226, 87, 87, 1) 0%,
+    rgba(242, 129, 109, 1) 100%
+  );
+  box-shadow: inset -5px -3px 1px rgb(0 0 0 / 34%),
+    inset -1.5px -2px 1px rgb(0 0 0 / 34%),
+    -8em 12em 0px -98.7px rgb(0, 183, 255),
+    -8em 12em 0px -6em rgba(255, 255, 255, 0.308),
+    -8em 7em 0 -6.1em rgba(255, 255, 255, 0.849),
+    8em -8.5em 0 -98px rgba(255, 255, 255, 0.493), 7em -2.5em 0 -98.5px white,
+    -9em -3em 0 -97.6px rgba(1, 255, 221, 0.671),
+    3.3em 8em 0 -98.9px rgb(0, 238, 255), 0em -7.5em 0 -98.9px white,
+    0.7em 11em 0 -96.8px white, 8em 5em 0 -97.8px rgba(255, 255, 255, 0.644),
+    10em 12.5em 0 -98.1px rgba(0, 217, 255, 0.477);
+}
 .box h2 {
-    margin-bottom: 40px;
-   text-align: center;
-   font-size: 26px;
-   color: #c2095a;
-   font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffffa4;
+  grid-area: header;
 }
-input {
-    padding: 20px;
-    user-select: none;
-    height: 50px;
-    width: 400px;
-    border-radius: 6px;
-    border: none;
-    border: 2px solid #64A6BD;
-    outline: none;
-    font-size: 22px;
-}
- input ::placeholder {
-     font-size: 26px;
- }
 
- #btnGen {
-     display: flex;
-     font-size: 20px;
-     font-weight: 500;
-     background-color: #64A6BD;
-     color: #c2095a;
-     justify-content: center;
-     cursor: pointer;
-     text-align: center;
-     margin-top: 40px;
-     width: 150px;
-     height: 50px;
-     padding-top: 10px;
-     margin-left: 30%;
- }
- #btnGen:hover {
-     color: #f5ff90;
-     background-color: #136f63;
- }
+input {
+  padding: 25px 0 10px 0;
+  user-select: none;
+  width: 85%;
+  border: none;
+  border-bottom: 1px solid #ffffffa4;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffffa4;
+  background-color: rgba(255, 255, 255, 0);
+  grid-area: input;
+}
+::placeholder {
+  font-size: 18px;
+  opacity: 0.2;
+  color: #ffffffa4;
+}
+
+#btnGen {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffffa4;
+  cursor: pointer;
+  width: 150px;
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  border: 1px solid #ffffffa4;
+  border-radius: 4px;
+  transition: background-color 0.4s ease-in;
+  grid-area: button;
+  height: 40px;
+}
+#btnGen:hover {
+  color: #ffffff;
+  background-color: #482a45;
+}
